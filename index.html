@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Mission to Mars</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" 
+    integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <div class="jumbotron text-center">
+            <h1 class="display-4">Mission to Mars</h1>
+            <a class="btn btn-danger btn-block btn-lg" href="/scrape" role="button">Scrape New Data</a>
+          </div>
+          <div class="row">
+              <div class = "col-12">
+                  <h3 class = "text-center">Latest Mars News:</h3>
+              </div>
+              <div class = "col-12">
+                  <h6>{{mars_full.news_title}}</h6>
+                  <p>{{mars_full.news_para}}</p>
+              </div>
+          </div>    
+        <div class = "row">
+            <div class = "col-7">
+                <img src = {{mars_full.mars_image}}>
+
+            </div>
+            <div class = "col-5">
+                <h3 class = "text-center">Mars Weather</h3>
+                <p>{{mars_full.weather_tweet}}</p>
+                <hr>
+                <h3 class="text-center">Mars Facts</h3>
+                <table border="1" class="dataframe">
+                    <thead>
+                      <tr style="text-align: right;">
+                        <th></th>
+                        <th>value</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <th>Equatorial Diameter:</th>
+                        <td>6,792 km</td>
+                      </tr>
+                      <tr>
+                        <th>Polar Diameter:</th>
+                        <td>6,752 km</td>
+                      </tr>
+                      <tr>
+                        <th>Mass:</th>
+                        <td>6.42 x 10^23 kg (10.7% Earth)</td>
+                      </tr>
+                      <tr>
+                        <th>Moons:</th>
+                        <td>2 (Phobos &amp; Deimos)</td>
+                      </tr>
+                      <tr>
+                        <th>Orbit Distance:</th>
+                        <td>227,943,824 km (1.52 AU)</td>
+                      </tr>
+                      <tr>
+                        <th>Orbit Period:</th>
+                        <td>687 days (1.9 years)</td>
+                      </tr>
+                      <tr>
+                        <th>Surface Temperature:</th>
+                        <td>-153 to 20 °C</td>
+                      </tr>
+                      <tr>
+                        <th>First Record:</th>
+                        <td>2nd millennium BC</td>
+                      </tr>
+                      <tr>
+                        <th>Recorded By:</th>
+                        <td>Egyptian astronomers</td>
+                      </tr>
+                    </tbody>
+                  </table>
+            </div>
+        </div>
+        <hr>
+        <h3 class = "text-center">Mars Hemispheres</h3>
+        <div class = "row">
+            <div class = "col-6">
+                <figure class="figure">
+                    <img class = "img" src= {{mars_full.hemi_links.0.url_hemi}}>
+                    <figcaption class="figure-caption">{{mars_full.hemi_links.0.name}}</figcaption>
+                </figure>
+            </div>
+            <div class = "col-6">
+                <figure class="figure w-10">
+                    <img class = "img" src= {{mars_full.hemi_links.1.url_hemi}}>
+                    <figcaption class="figure-caption">{{mars_full.hemi_links.1.name}}</figcaption>
+                </figure>
+            </div>
+        </div>    
+            <div class = "row">
+                <div class = "col-6">
+                    <figure class="figure w-40">
+                        <img class = "img" src= {{mars_full.hemi_links.2.url_hemi}}>
+                        <figcaption class="figure-caption">{{mars_full.hemi_links.2.name}}</figcaption>
+                    </figure>
+                </div>
+                <div class = "col-6">
+                    <figure class="figure w-40">
+                        <img class = "img" src= {{mars_full.hemi_links.3.url_hemi}}>
+                        <figcaption class="figure-caption">{{mars_full.hemi_links.3.name}}</figcaption>
+                    </figure>
+                </div>
+        </div>
+        
+    </div>
